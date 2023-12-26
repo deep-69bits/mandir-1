@@ -1,0 +1,67 @@
+
+    <html>
+        <body>
+            <h1>nominees</h1>
+        </body>
+
+    <script>
+
+const        video_links = [
+    "https://news18-ar-filter.s3.amazonaws.com/amrendra%20kumar%20_6205838896_1700625625200.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/anish%20pal_8016499257_1700634186062.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/anish%20pal_8016499257_1700634293756.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/ankush_9608967086_1700805066333.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/ankush_9608967086_1700806291662.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/arnab%20das_8436706467_1700644496703.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/bidhan%20das_7001047517_1700593231602.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/bobby%20dutta%20_9799559756_1700824888500.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/bobby%20dutta%20_9799559756_1700825030527.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/chandan%20das_8640922225_1700804421097.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/debasis%20behera%20_9556881942_1700631697939.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/dhruv_7015491082_1700586242587.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/dhruv_7015491082_1700586464066.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/haresh%20_7383042577_1700805655676.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/haresh%20_7383042577_1700807904723.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/haresh%20_7383042577_1700808524576.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/jasraj%20singh%20_9341858957_1700803692460.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/jayveer_9548198139_1700619991021.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/kanhaiya%20lal%20lath%20_9929966007_1700830782756.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/kanhaiya%20lal%20lath_9929966007_1700830861598.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/paramita%20dey%20_8101534155_1700811710618.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/%E0%A4%95%E0%A4%A8%E0%A5%8D%E0%A4%B9%E0%A5%88%E0%A4%AF%E0%A4%BE%20%E0%A4%B2%E0%A4%BE%E0%A4%B2%20_9929966007_1700830684822.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/parth%20atara_8849400505_1700807849642.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/ramananda%20kundu%20_7478630302_1700805483520.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/salim%20mohammad%20_9079094723_1700831268774.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/satya_8372079315_1700808345994.webm",
+    "https://news18-ar-filter.s3.amazonaws.com/shraddha%20biswas_9832710695_1700808560112.webm",
+]
+
+
+        const videoList = document.createElement('ul');
+
+        for (let videoLink of video_links) {
+          let listItem = document.createElement('li');
+          listItem.style.marginBottom = "8px";
+
+          let videoElement = document.createElement('video');
+          videoElement.src = videoLink;
+          videoElement.controls = true;
+          videoElement.style.width = "400px";
+          videoElement.style.height = "auto";
+          listItem.appendChild(videoElement);
+
+          let brelment = document.createElement('br');
+          listItem.appendChild(brelment);
+
+          let anchorElement = document.createElement('a');
+          anchorElement.href = videoLink;
+          anchorElement.innerHTML = videoLink;
+          listItem.appendChild(anchorElement);
+
+          videoList.appendChild(listItem);
+        }
+
+        document.body.appendChild(videoList);
+
+    </script>
+    </html>

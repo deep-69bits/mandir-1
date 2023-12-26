@@ -1,0 +1,77 @@
+[
+    {
+        "type": "landscape-link",
+        "link": "https://www.youtube.com/embed/bhkJHfSzFhQ",
+        "comment": "Video 1"
+    },
+    {
+        "type": "landscape-link",
+        "link": "https://www.youtube.com/embed/bhkJHfSzFhQ",
+        "comment": "Video 2"
+    },
+    {
+        "type": "landscape-link",
+        "link": "https://www.youtube.com/embed/bhkJHfSzFhQ",
+        "comment": "Video 3"
+    },
+    {
+        "type": "landscape-link",
+        "link": "https://www.youtube.com/embed/bhkJHfSzFhQ",
+        "comment": "Video 4"
+    },
+    {
+        "type": "landscape-link",
+        "link": "https://www.youtube.com/embed/bhkJHfSzFhQ",
+        "comment": "Video 5"
+    },
+    {
+        "type": "landscape-link",
+        "link": "https://www.youtube.com/embed/bhkJHfSzFhQ",
+        "comment": "Video 6"
+    },
+    {
+        "type": "landscape-link",
+        "link": "https://www.youtube.com/embed/nyd-xznCpJc",
+        "comment": "Live Video"
+    },
+    {
+        "type": "portrait-link",
+        "link": "https://www.youtube.com/embed/x5kba1KklBo",
+        "comment": "Shorts 1"
+    },
+    {
+        "type": "portrait-link",
+        "link": "https://www.youtube.com/embed/x5kba1KklBo",
+        "comment": "Shorts 2"
+    },
+    {
+        "type": "portrait-link",
+        "link": "https://www.youtube.com/embed/x5kba1KklBo",
+        "comment": "Shorts 3"
+    },
+    {
+        "type": "portrait-link",
+        "link": "https://www.youtube.com/embed/x5kba1KklBo",
+        "comment": "Shorts 4"
+    },
+    {
+        "type": "portrait-link",
+        "link": "https://www.abplive.com/elections/assembly-election-2023-live-updates-chhattisgarh-telangana-mp-rajasthan-polls-schedule-3-november-bjp-declare-candidates-third-list-most-f-vasundhara-raje-loyalists-get-ticket-bjp-congress-news-2528672/amp",
+        "comment": "Text 1"
+    },
+    {
+        "type": "portrait-link",
+        "link": "https://www.abplive.com/news/india/telangana-assembly-election-2023-election-commission-of-india-issues-notification-for-telangana-assembly-polls-to-be-held-on-30-november-2528943/amp",
+        "comment": "Text 2"
+    },
+    {
+        "type": "portrait-link",
+        "link": "https://www.abplive.com/states/rajasthan/rajasthan-election-2023-bjp-canceled-krishnendra-kaur-ticket-from-nadbai-gave-chance-to-jagat-singh-ann-2528757/amp",
+        "comment": "Text 3"
+    },
+    {
+        "type": "portrait-link",
+        "link": "https://www.abplive.com/states/madhya-pradesh/mp-assembly-election-2023-singrauli-devsar-seat-grandfather-granddaughter-compete-against-each-other-congress-samajwadi-party-ann-2528811/amp",
+        "comment": "Text 4"
+    }
+]
