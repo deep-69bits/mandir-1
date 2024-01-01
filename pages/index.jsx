@@ -81,8 +81,8 @@ export default function GlbCombiner() {
   const [progress, setProgress] = useState(0);
   const [isSafari, setSafari] = useState(false);
 
-  const [flight,setflight]=useState('null')
-  const [state,setState]=useState('')
+  const [flight, setflight] = useState('null')
+  const [state, setState] = useState('')
 
   useEffect(() => {
     const checkBrowser = () => {
@@ -245,16 +245,16 @@ export default function GlbCombiner() {
     <>
 
       <div className={`bg-hero-bg  max-w-8xl md:bg-hero-bg bg-cover bg-no-repeat mx-auto flex flex-row items-center  md:p-0 p-4 justify-center  md:m-0  h-[100vh] md:w-[100vw] `}>
-      <img src="/assets/images/Line.png" className="absolute  top-[-370px]  rotate-90 w-[50px] " alt="" />
+        <img src="/assets/images/Line.png" className="absolute  top-[-370px]  rotate-90 w-[50px] " alt="" />
 
-      <img src="/assets/images/flower-left.png" className="absolute left-14 top-0" alt="" />
-      <img src="/assets/images/flower-right.png" className="absolute right-14 top-0" alt="" />
-      <img src="/assets/images/Line.png" className="absolute right-4 top-20 h-4/5  w-[50px] " alt="" />
-      <img src="/assets/images/Line.png" className="absolute left-4 top-20 h-4/5  w-[50px] " alt="" />
+        <img src="/assets/images/flower-left.png" className="absolute left-14 top-0" alt="" />
+        <img src="/assets/images/flower-right.png" className="absolute right-14 top-0" alt="" />
+        <img src="/assets/images/Line.png" className="absolute right-4 top-20 h-4/5  w-[50px] " alt="" />
+        <img src="/assets/images/Line.png" className="absolute left-4 top-20 h-4/5  w-[50px] " alt="" />
 
-        <img src="/assets/images/madir.png" className="absolute bottom-[0px]  w-[90%] h-[500px] " alt="" />
-        
-       
+        <img src="/assets/images/madir.png" className="absolute bottom-[0px] -z-0 w-[90%] h-[500px] " alt="" />
+
+
 
 
 
@@ -272,9 +272,9 @@ export default function GlbCombiner() {
               <Image priority={true} className="flex mb-4 pt-2 " src={`/assets/images/abplogo.png`} width={80} height={80} alt={"welcome"} />
             </div>
 
-            <div className={`z-10 flex  flex-col  md:h-fit md:max-w-lg rounded-xl bg-gradient-to-r from-gray-400/10 to-gray-200/10     border-2 border-white p-4 md:px-8`}>
+            <div className={`z-10 flex  flex-col  md:h-fit  bg-gradient-to-r from-gray-400/10 to-gray-200/10  rounded-2xl  p-4 px-6 md:px-12`}>
               {steps == 0 && (
-                <>
+                <div>
                   <div className="flex flex-col w-full md:max-w-md  space-y-4  md:px-0 ">
                     <div className="flex items-center justify-center font-bold w-full text-center py-4 text-white ">
                       <h1 className="text-[26px]  text-[#F7D07C] font-[700] ">आपका रामभूमि अयोध्या में स्वागत है</h1>
@@ -284,9 +284,9 @@ export default function GlbCombiner() {
                     <div className="bg-white rounded-xl p-2">
                       {/* <h1 className="text-transparent text-lg bg-clip-text bg-gradient-to-r pl-2 from-[#dba649] to-custom-orange font-bold pt-px">Enter Your Name </h1> */}
                       <div className="flex flex-row justify-center items-center">
-                      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M21.6175 9.11382C21.6175 12.7851 18.6739 15.7289 15 15.7289C11.3274 15.7289 8.38252 12.7851 8.38252 9.11382C8.38252 5.44253 11.3274 2.5 15 2.5C18.6739 2.5 21.6175 5.44253 21.6175 9.11382ZM15 27.5C9.57797 27.5 5 26.6187 5 23.2187C5 19.8174 9.60673 18.9674 15 18.9674C20.4233 18.9674 25 19.8487 25 23.2487C25 26.65 20.3933 27.5 15 27.5Z" fill="#531414"/>
-</svg> 
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M21.6175 9.11382C21.6175 12.7851 18.6739 15.7289 15 15.7289C11.3274 15.7289 8.38252 12.7851 8.38252 9.11382C8.38252 5.44253 11.3274 2.5 15 2.5C18.6739 2.5 21.6175 5.44253 21.6175 9.11382ZM15 27.5C9.57797 27.5 5 26.6187 5 23.2187C5 19.8174 9.60673 18.9674 15 18.9674C20.4233 18.9674 25 19.8487 25 23.2487C25 26.65 20.3933 27.5 15 27.5Z" fill="#531414" />
+                        </svg>
                         <input
                           type="text"
                           name="username"
@@ -296,7 +296,7 @@ export default function GlbCombiner() {
                             setUsername(e.target.value);
                             setWarning("");
                           }}
-                          className={"w-full flex caret-black flex-col rounded-lg bg-white px-4 py-2 hover:border-none hover:outline-none outline-none border-none hover:bg-gray-100 text-black font-semibold text-xs "}
+                          className={"w-full z-50 flex caret-black flex-col rounded-lg bg-white px-4 py-2 hover:border-none hover:outline-none outline-none border-none hover:bg-gray-100 text-black font-semibold text-xs "}
                         />
                       </div>
                     </div>
@@ -315,7 +315,7 @@ export default function GlbCombiner() {
                               setflight(e.target.value);
                               setWarning("");
                             }}
-                            className={"w-full flex caret-black flex-col rounded-lg bg-white px-4 py-2 hover:border-none hover:outline-none outline-none border-none hover:bg-gray-100 text-black font-semibold text-xs "}
+                            className={"w-full flex z-50 caret-black flex-col rounded-lg bg-white px-4 py-2 hover:border-none hover:outline-none outline-none border-none hover:bg-gray-100 text-black font-semibold text-xs "}
                           />
                         </div>
                       </div>
@@ -337,46 +337,51 @@ export default function GlbCombiner() {
                               setState(e.target.value);
                               setWarning("");
                             }}
-                            className={"w-full flex caret-black flex-col rounded-lg bg-white px-4 py-2 hover:border-none hover:outline-none outline-none border-none hover:bg-gray-100 text-black font-semibold text-xs "}
+                            className={"w-full z-50 flex caret-black flex-col rounded-lg bg-white px-4 py-2 hover:border-none hover:outline-none outline-none border-none hover:bg-gray-100 text-black font-semibold text-xs "}
                           />
                         </div>
                       </div>
                     </div>
                   </div>
-                </>
+                </div>
               )}
               {steps == 0 && (
-                <>
-                  <div className={"h-12  text-center flex justify-start items-center" + (username && username.length > 3 ? "" : " opacity-10")}>
-                    {isMale == undefined && <div className="flex w-full text-start justify-center items-center text-white"></div>}
-                  </div>
-
-                  <div className={styles.buttonGroup + (username && username.length > 3 ? "" : " opacity-10")}>
-                    {" "}
+                <div>
+                  <div className="z-50 grid grid-flow-row grid-cols-2 gap-x-5" >
                     <div
                       onClick={() => {
                         setIsMale(true);
-                        handleNext();
+                        console.log("ewnjfnewj")
+                        // handleNext();
                       }}
-                      className={styles.homeButton + " " + (isMale ? styles.isHomeActive : "")}
+                      className="bg-white z-50 cursor-pointer flex  gap-x-2 px-1 item-center my-4 rounded-lg py-2 "
                     >
-                      {/* <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Frenderapi.s3.amazonaws.com%2Fnuveken06.png&f=1&nofb=1&ipt=1ad28c158cb5d74cc15efb61c0bcb046b0de945fc21e54e048d9a8689043675f&ipo=images" alt="male avatar" /> */}
-                       {/* <img src="/assets/images/man.png" alt="" /> */}
-                      Male
+                        <img className="scale-90" src="/assets/images/man.png" alt="" />
+                        <span className="text-[#531414] text-[20px] font-[600] " >पुरुष</span>
                     </div>
+
                     <div
                       onClick={() => {
                         setIsMale(false);
-                        handleNext();
+                        // handleNext();
                       }}
-                      className={styles.homeButton + " " + (isMale === false ? styles.isHomeActive : "")}
+                      className="bg-white z-50 cursor-pointer flex  gap-x-2 px-1 item-center my-4 rounded-lg py-2 "
                     >
-                      {/* <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Frenderapi.s3.amazonaws.com%2FmYhZ2k6vA.png&f=1&nofb=1&ipt=ce4e5f9789fd79ddcec2362afbbe50f4032679cf89813d1eff7eec73433e41ce&ipo=images" alt="male avatar" /> */}
-                      Female
+                    <img className="scale-90" src="/assets/images/women.png" alt="" />
+                    <span className="text-[#531414] text-[20px] font-[600] " >महिला</span>
                     </div>
                   </div>
-                  <br />
-                </>
+
+                  <div
+                   onClick={()=>{
+                    handleNext();
+                   }}
+                  >
+                   <button className=" w-full text-center text-xl py-4 flex justify-center items-center rounded-2xl z-50 bg-black bg-opacity-20 font-bold " >
+                   चलो अयोध्या
+                   </button>
+                  </div>
+                </div>
               )}
               {steps == 1 && (
                 <div className={"AVATARS flex md:h-full flex-col items-center justify-center space-y-4 pt-4"}>
@@ -433,7 +438,7 @@ export default function GlbCombiner() {
               )}
 
               {steps == 1 && avatarUrl == "" && username && username != "" && username.length > 3 && (
-                <>
+                <div>
                   {/* <div className="flex justify-center">
                     <div className="h-px bg-custom-orange w-1/2 mt-2 mx-2 "></div>
                     <div className="text-custom-orange">OR</div>
@@ -444,7 +449,7 @@ export default function GlbCombiner() {
                       Create Custom Avatar
                     </div>
                   </div> */}
-                </>
+                </div>
               )}
               {steps == 1 && avatarUrl && avatarUrl != "" && combineAndLoadAnimation(avatarUrl)}
 
@@ -457,7 +462,7 @@ export default function GlbCombiner() {
               )} */}
 
               {steps == 2 && avatarUrl && avatarUrl != "" && (
-                <>
+                <div>
                   <div className="gradient_blue w-screen h-screen overflow-hidden fixed top-0 left-0">
                     <div className="absolute top-1/2 -translate-y-1/2 flex z-20 flex-col justify-center items-center">
                       {
@@ -485,7 +490,7 @@ export default function GlbCombiner() {
                       Video formats are not supported by your browser
                     </video>
                   </div>
-                </>
+                </div>
               )}
             </div>
           </div>
