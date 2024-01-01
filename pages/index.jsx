@@ -244,8 +244,20 @@ export default function GlbCombiner() {
   return (
     <>
 
-      <div className={`bg-hero  md:bg-hero-bg bg-cover bg-no-repeat mx-auto flex flex-row items-center  md:p-0 p-4 justify-center  md:m-0  h-[100vh] md:w-[100vw] `}>
-        <img src="/assets/images/madir.png" className="absolute bottom-0" alt="" />
+      <div className={`bg-hero-bg  max-w-8xl md:bg-hero-bg bg-cover bg-no-repeat mx-auto flex flex-row items-center  md:p-0 p-4 justify-center  md:m-0  h-[100vh] md:w-[100vw] `}>
+      <img src="/assets/images/Line.png" className="absolute  top-[-370px]  rotate-90 w-[50px] " alt="" />
+
+      <img src="/assets/images/flower-left.png" className="absolute left-14 top-0" alt="" />
+      <img src="/assets/images/flower-right.png" className="absolute right-14 top-0" alt="" />
+      <img src="/assets/images/Line.png" className="absolute right-4 top-20 h-4/5  w-[50px] " alt="" />
+      <img src="/assets/images/Line.png" className="absolute left-4 top-20 h-4/5  w-[50px] " alt="" />
+
+        <img src="/assets/images/madir.png" className="absolute bottom-[0px]  w-[90%] h-[500px] " alt="" />
+        
+       
+
+
+
         {/* {viewModal ? (
         <>   <NamasteModal isVisible={viewModal} onClose={() => setViewModal(false)} /> </>
       ) : ( */}
