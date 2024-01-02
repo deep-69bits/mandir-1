@@ -232,6 +232,15 @@ export default function GlbCombiner() {
   }
 
   function handleNext() {
+    if(isMale==undefined){
+      console.log("undefined")
+      alert("Please Select Gender")
+      return
+    }
+    if(username==undefined || username.length<4 ){
+      alert("Username Should be more than 4 letters")
+      return
+    }
     setSteps(steps + 1);
   }
 
@@ -258,8 +267,8 @@ export default function GlbCombiner() {
           font-family: ${inter.style.fontFamily};
         }
       `}</style>
-        <img src="/assets/images/flower-left.png" className="absolute left-14 top-0" alt="" />
-        <img src="/assets/images/flower-right.png" className="absolute right-14 top-0" alt="" />
+        <img src="/assets/images/Leftside-flower.png" className="absolute left-20 h-[400px] top-0" alt="" />
+        <img src="/assets/images/Rightside-flower.png" className="absolute right-20  h-[400px] top-0" alt="" />
         <img src="/assets/images/Line.png" className="absolute right-4 top-20 h-4/5  w-[50px] " alt="" />
         <img src="/assets/images/Line.png" className="absolute left-4 top-20 h-4/5  w-[50px] " alt="" />
 
@@ -362,10 +371,9 @@ export default function GlbCombiner() {
                     <div
                       onClick={() => {
                         setIsMale(true);
-                        console.log("ewnjfnewj")
                         // handleNext();
                       }}
-                      className="bg-white z-50 cursor-pointer flex  gap-x-2 px-1 item-center my-4 rounded-lg py-2 "
+                      className={ isMale?"bg-white z-50 cursor-pointer flex  gap-x-2 px-1 item-center my-4 rounded-lg py-2": "bg-white opacity-25 z-50 cursor-pointer flex  gap-x-2 px-1 item-center my-4 rounded-lg py-2 "}
                     >
                         <img className="scale-90" src="/assets/images/man.png" alt="" />
                         <span className="text-[#531414] text-[20px] font-[600] translate-y-1 " >पुरुष</span>
@@ -376,7 +384,7 @@ export default function GlbCombiner() {
                         setIsMale(false);
                         // handleNext();
                       }}
-                      className="bg-white z-50 cursor-pointer flex  gap-x-2 px-1 item-center my-4 rounded-lg py-2 "
+                      className={ isMale==false?"bg-white z-50 cursor-pointer flex  gap-x-2 px-1 item-center my-4 rounded-lg py-2": "bg-white opacity-25 z-50 cursor-pointer flex  gap-x-2 px-1 item-center my-4 rounded-lg py-2 "}
                     >
                     <img className="scale-90" src="/assets/images/women.png" alt="" />
                     <span className="text-[#531414] text-[20px] font-[600] translate-y-1" >महिला</span>
