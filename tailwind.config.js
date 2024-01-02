@@ -15,7 +15,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "hero-bg": "url('/assets/images/mandirbg.png')",
-        "hero-bg-mobile": "url('/assets/images/bg-mobile.webp')",
+        "hero-bg-mobile": "url('/assets/images/mandirbg.png')",
       },
       colors: {
         "primaryBloodRed": "#FF0034",

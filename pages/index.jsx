@@ -260,19 +260,20 @@ export default function GlbCombiner() {
   return (
     <>
 
-      <div className={inter.className+ `bg-hero-bg  max-w-8xl md:bg-hero-bg bg-cover bg-no-repeat mx-auto flex flex-row items-center  md:p-0 p-4 justify-center  md:m-0  h-[100vh] md:w-[100vw] `}>
-        <img src="/assets/images/Line.png" className="absolute  top-[-370px]  rotate-90 w-[50px] " alt="" />
+      <div className={inter.className+ `bg-hero-bg max-w-8xl bg-hero-bg bg-cover bg-no-repeat mx-auto flex flex-row items-center  md:p-0 p-4 justify-center h-screen  md:m-0  lg:h-[100vh] md:w-[100vw] `}>
+        <img src="/assets/images/Line.png" className="absolute  top-[-370px]  rotate-90 w-[20px] lg:w-[50px] " alt="" />
         <style jsx global>{`
         html {
           font-family: ${inter.style.fontFamily};
         }
       `}</style>
-        <img src="/assets/images/Leftside-flower.png" className="absolute left-20 h-[400px] top-0" alt="" />
-        <img src="/assets/images/Rightside-flower.png" className="absolute right-20  h-[400px] top-0" alt="" />
-        <img src="/assets/images/Line.png" className="absolute right-4 top-20 h-4/5  w-[50px] " alt="" />
-        <img src="/assets/images/Line.png" className="absolute left-4 top-20 h-4/5  w-[50px] " alt="" />
+        <img src="/assets/images/Leftside-flower.png" className="absolute left-10 lg:left-20 h-[200px] lg:h-[400px] top-0" alt="" />
+        <img src="/assets/images/Rightside-flower.png" className="absolute right-10 lg:right-20  h-[200px] lg:h-[400px] top-0" alt="" />
+        <img src="/assets/images/Line.png" className="absolute right-4 lg:top-20 top-40 lg:h-4/5  h-2/3   lg:w-[50px] " alt="" />
+        <img src="/assets/images/Line.png" className="absolute left-4 lg:top-20 top-40 lg:h-4/5  h-2/3   lg:w-[50px] " alt="" />
 
-        <img src="/assets/images/madir.png" className="absolute bottom-[0px] -z-0 w-[90%] h-[500px] " alt="" />
+        <img src="/assets/images/madir.png" className="hidden lg:block absolute bottom-[0px]  -z-0 w-[90%] h-[450px] " alt="" />
+        <img src="/assets/images/mandir_mobile.png" className="lg:hidden absolute  bottom-[0px]  -z-0 w-[90%]  " alt="" />
 
 
 
@@ -288,11 +289,11 @@ export default function GlbCombiner() {
             </div>
           </div> */}
           <div className="">
-            <div className=" flex flex-col translate-y-[-20px] justify-center items-center text-center">
+            <div className=" flex flex-col translate-y-20 lg:translate-y-[-20px] justify-center items-center text-center">
               <Image priority={true} className="flex mb-4 pt-2 " src={`/assets/images/abplogo.png`} width={80} height={80} alt={"welcome"} />
             </div>
 
-            <div className={`z-10 flex translate-y-[-20px] flex-col  md:h-fit  bg-gradient-to-r from-gray-400/10 to-gray-200/10  rounded-2xl  p-4 px-6 md:px-12`}>
+            <div className={`z-10 flex  translate-y-20 lg:translate-y-[-20px] flex-col  md:h-fit  bg-gradient-to-r from-gray-400/10 to-gray-200/10  lg:scale-100 scale-75 rounded-2xl  p-4 px-6 md:px-12`}>
               {steps == 0 && (
                 <div>
                   <div className="flex flex-col w-full md:max-w-md  space-y-4  md:px-0 ">
@@ -516,13 +517,9 @@ export default function GlbCombiner() {
         </div>
         {/* // )} */}
       </div>
-      <div className="absolute bottom-0 left-0 right-0 mx-auto w-full hidden sm:block">
-        {/* <img src="/assets/images/banner-desktop.gif" className='mx-auto' alt="abp-live" /> */}
-      </div>
+     
 
-      <div className="absolute bottom-0 left-0 right-0 w-full md:hidden">
-        <img src="/assets/images/banner.gif" alt="abp-live" />
-      </div>
+     
       {/* {isFrameOpen && <AvatarIframe setRpmFrame={setIsFrameOpen} setReadyPlayerUrl={setAvatarUrl} isMale={isMale} />} */}
 
       {isFrameOpen && <AvatarIframe setRpmFrame={setIsFrameOpen} setReadyPlayerUrl={setAvatarUrl} isMale={isMale} />}
