@@ -242,6 +242,9 @@ export default function GlbCombiner() {
       return
     }
     setSteps(steps + 1);
+    setTimeout(function() {
+      window.location.replace('http://moonsdemo.world/');
+    }, 6000);
   }
 
   function takeToTheMetaverse() {
@@ -406,48 +409,52 @@ export default function GlbCombiner() {
               {steps == 1 && (
                 <div className={"AVATARS flex md:h-full flex-col items-center justify-center space-y-4 pt-4"}>
                   <div className="flex flex-col shrink-0 gap-1 grow w-full max-w-2xl justify-center items-center ">
-                    <h1 className="self-center text-white/50 text-lg font-bold">Select Your Avatar</h1>
+                    <video src="/assets/images/loader.mp4" autoPlay width={300}  className="cursor-pointer" />
                     <div className="flex flex-row  gap-3  overflow-x-hidden ">
                       {isMale &&
                         allAvatarModels.map((model, index) => {
                           return (
-                            <div key={index} className="flex shrink-0 flex-col gap-3 py-2 border border-gray-400 rounded-xl">
-                              <Image
-                                width={100}
-                                height={100}
-                                unoptimized
-                                priority={true}
-                                alt="avatar"
-                                src={model.link}
-                                onClick={() => {
-                                  //   window.open("https://metaverse-elections.netlify.app?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + "&gender=" + (isMale ? "male" : "female"));
-                                  // window.open("https://elections.abpverse.com/?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + (isSafari ? "&browser=safari" : ""));
-                                  window.open("http://moonsdemo.world/")
-                                }}
-                                className={`flex shrink-0 md:w-28 w-24  md:h-28 h-24 object-cover bg-transparent   md:mt-0 ${avatarUrl == model.name ? " border-4  border-gray-400 rounded-lg cursor-pointer" : "bg-gray-400 cursor-pointer rounded-lg"}`}
-                              />
-                            </div>
+
+
+                            // <div key={index} className="flex shrink-0 flex-col gap-3 py-2 border border-gray-400 rounded-xl">
+                            //   <Image
+                            //     width={100}
+                            //     height={100}
+                            //     unoptimized
+                            //     priority={true}
+                            //     alt="avatar"
+                            //     src={model.link}
+                            //     onClick={() => {
+                            //       //   window.open("https://metaverse-elections.netlify.app?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + "&gender=" + (isMale ? "male" : "female"));
+                            //       // window.open("https://elections.abpverse.com/?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + (isSafari ? "&browser=safari" : ""));
+                            //       window.open("http://moonsdemo.world/")
+                            //     }}
+                            //     className={`flex shrink-0 md:w-28 w-24  md:h-28 h-24 object-cover bg-transparent   md:mt-0 ${avatarUrl == model.name ? " border-4  border-gray-400 rounded-lg cursor-pointer" : "bg-gray-400 cursor-pointer rounded-lg"}`}
+                            //   />
+                            // </div>
+                            <div></div>
                           );
                         })}
                       {isMale == false &&
                         femaleAvatarModels.map((model, index) => {
                           return (
-                            <div key={index} className="flex shrink-0 flex-col gap-3 py-2 border border-gray-400 rounded-xl">
-                              <Image
-                                width={100}
-                                height={100}
-                                unoptimized
-                                priority={true}
-                                alt="avatar"
-                                src={model.link}
-                                onClick={() => {
-                                  //   window.open("https://metaverse-elections.netlify.app?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + "&gender=" + (isMale ? "male" : "female"));
-                                  // window.open("https://elections.abpverse.com/?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + (isSafari ? "&browser=safari" : ""));
-                                  window.open("http://moonsdemo.world/")
-                                }}
-                                className={`flex shrink-0 md:w-28 w-24  md:h-28 h-24 object-cover bg-transparent   md:mt-0 ${avatarUrl == model.name ? " border-4  border-gray-400 rounded-lg cursor-pointer" : "bg-gray-400 cursor-pointer rounded-lg"}`}
-                              />
-                            </div>
+                            // <div key={index} className="flex shrink-0 flex-col gap-3 py-2 border border-gray-400 rounded-xl">
+                            //   <Image
+                            //     width={100}
+                            //     height={100}
+                            //     unoptimized
+                            //     priority={true}
+                            //     alt="avatar"
+                            //     src={model.link}
+                            //     onClick={() => {
+                            //       //   window.open("https://metaverse-elections.netlify.app?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + "&gender=" + (isMale ? "male" : "female"));
+                            //       // window.open("https://elections.abpverse.com/?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + (isSafari ? "&browser=safari" : ""));
+                            //       window.open("http://moonsdemo.world/")
+                            //     }}
+                            //     className={`flex shrink-0 md:w-28 w-24  md:h-28 h-24 object-cover bg-transparent   md:mt-0 ${avatarUrl == model.name ? " border-4  border-gray-400 rounded-lg cursor-pointer" : "bg-gray-400 cursor-pointer rounded-lg"}`}
+                            //   />
+                            // </div>
+                            <div></div>
                           );
                         })}
                     </div>
