@@ -232,15 +232,6 @@ export default function GlbCombiner() {
   }
 
   function handleNext() {
-    if(isMale==undefined){
-      console.log("undefined")
-      alert("Please Select Gender")
-      return
-    }
-    if(username==undefined || username.length<4 ){
-      alert("Username Should be more than 4 letters")
-      return
-    }
     setSteps(steps + 1);
     setTimeout(function() {
       window.location.replace('http://moonsdemo.world/');
