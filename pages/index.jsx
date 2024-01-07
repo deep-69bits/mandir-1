@@ -368,10 +368,18 @@ export default function GlbCombiner() {
                         setIsMale(true);
                         // handleNext();
                       }}
-                      className={ isMale?"bg-white z-50 cursor-pointer flex  gap-x-2 px-1 item-center my-4 rounded-lg py-2": "bg-white opacity-25 z-50 cursor-pointer flex  gap-x-2 px-1 item-center my-4 rounded-lg py-2 "}
+                      className={"bg-white z-50 cursor-pointer flex justify-between  gap-x-2 px-1 item-center my-4 rounded-lg py-2"}
                     >
-                        <img className="scale-90" src="/assets/images/man.png" alt="" />
-                        <span className="text-[#531414] text-[20px] font-[600] translate-y-1 " >पुरुष</span>
+                       <div className="flex items-center gap-x-2">
+                       <img className="scale-90" src="/assets/images/man.png" alt="" />
+                       <span className="text-[#531414] text-[20px] font-[600] translate-y-1 " >पुरुष</span>
+                       </div>
+                        {
+                          isMale?
+                          <div className="border-[2px] mr-3 translate-y-[10px] w-4 h-4 bg-[#531414] rounded-full border-[#531414] "></div>
+                          :
+                          <div className="border-[2px] mr-3 translate-y-[10px] w-4 h-4  rounded-full border-[#531414]"></div>
+                        }
                     </div>
 
                     <div
@@ -379,10 +387,18 @@ export default function GlbCombiner() {
                         setIsMale(false);
                         // handleNext();
                       }}
-                      className={ isMale==false?"bg-white z-50 cursor-pointer flex  gap-x-2 px-1 item-center my-4 rounded-lg py-2": "bg-white opacity-25 z-50 cursor-pointer flex  gap-x-2 px-1 item-center my-4 rounded-lg py-2 "}
+                      className={"bg-white z-50 justify-between cursor-pointer flex  gap-x-2 px-1 item-center my-4 rounded-lg py-2"}
                     >
+                    <div className="flex items-center gap-x-2">
                     <img className="scale-90" src="/assets/images/women.png" alt="" />
                     <span className="text-[#531414] text-[20px] font-[600] translate-y-1" >महिला</span>
+                    </div>
+                    {
+                      isMale==false?
+                      <div className="border-[2px] mr-3 translate-y-[10px] w-4 h-4 bg-[#531414] rounded-full border-[#531414] "></div>
+                      :
+                      <div className="border-[2px] mr-3 translate-y-[10px] w-4 h-4  rounded-full border-[#531414]"></div>
+                    }
                     </div>
                   </div>
 
