@@ -535,7 +535,11 @@ export default function GlbCombiner() {
               <Image priority={true} className="flex mb-4 pt-2 " src={`/assets/images/abplogo.png`} width={80} height={80} alt={"welcome"} />
             </div>
 
-            <div className={`z-10 flex  translate-y-20 lg:translate-y-[-20px] flex-col  md:h-fit    lg:scale-100 scale-75 rounded-2xl  p-4 px-6 w-full lg:w-[500px] md:px-12`}>
+            <div className=" flex flex-col translate-y-10 lg:hidden  justify-center items-center text-center">
+            <Image src={`/assets/images/ShreeRaam.png`}    width={80} height={80} alt={"Shree Ram Image"} />
+            </div>
+
+            <div className={`z-10 flex  translate-y-20 lg:translate-y-[-20px] flex-col  md:h-fit    scale-100  rounded-2xl  p-4 px-6 w-full lg:w-[500px] md:px-12`}>
               {steps == 0 && (
                 <div>
                   <div className="flex flex-col w-full   space-y-4  ">
