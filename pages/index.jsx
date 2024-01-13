@@ -514,8 +514,8 @@ export default function GlbCombiner() {
         <img src="/assets/images/flowerRight.png" className="absolute z-10 right-10 lg:right-20  h-[200px] lg:h-[400px] top-0" alt="" />
 
 
-        <img src="/assets/images/TempleImage1.png" className="hidden lg:block absolute bottom-[0px] h-[60%] z-10 w-full  " alt="" />
-        <img src="/assets/images/templeM2.png" className="lg:hidden  absolute  bottom-[0px]   z-10  " alt="" />
+        <img src="/assets/images/TempleImage1.png" className="hidden lg:block absolute bottom-[-30px] h-[60%] z-10 w-full  " alt="" />
+        <img src="/assets/images/templeM2.png" className="lg:hidden  absolute  bottom-[-40px]   z-10  " alt="" />
 
 
 
