@@ -299,7 +299,7 @@ const PreLoader = () => {
 
 
         </div>
-        <h1 className="text-[#900000] text-[46px] font-[600] ">भारत का बच्चा बच्चा जय श्री राम बोलेगा</h1>
+        <h1 className="text-[#900000] lg:text-[46px] text-[20px] font-[600] ">भारत का बच्चा बच्चा जय श्री राम बोलेगा</h1>
       </div>
     </div>
   )
