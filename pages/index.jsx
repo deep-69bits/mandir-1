@@ -323,10 +323,10 @@ export default function GlbCombiner() {
 
   const [flight, setflight] = useState('null')
 
-  const [language,setLanguage]=useState('hindi')
+  const [language, setLanguage] = useState('hindi')
 
 
-  const [languagedropdown,setLanguageDropdown]=useState(true)
+  const [hindi, setHindi] = useState(true)
 
   useEffect(() => {
     const checkBrowser = () => {
@@ -470,7 +470,29 @@ export default function GlbCombiner() {
 
   function handleNext() {
 
-    window.location.replace('http://moonsdemo.world/');
+
+    if (username == undefined || username.trim() === "") {
+      alert("Please enter your name")
+      return
+    }
+
+    if (isMale == undefined) {
+      alert("Please select your gender")
+      return
+    }
+
+    setSteps(steps + 1);
+
+
+    setTimeout(function () {
+      if (isMale == true) {
+        window.location.replace(`https://ayodhya.abpverse.com/?name=${username}&gender=male`);
+      }
+      else if (isMale == false) {
+        window.location.replace(`https://ayodhya.abpverse.com/?name=${username}&gender=female`);
+      }
+    }, 31000);
+
   }
 
   function takeToTheMetaverse() {
@@ -505,11 +527,32 @@ export default function GlbCombiner() {
     )
   }
 
+  if (steps == 1) {
+    return (
+      <div className="">
+        <video className="absolute z-50 hidden lg:block " autoPlay src="/assets/images/Desktop_hq.mp4" />
+        <video className="absolute z-50  lg:hidden block " autoPlay src="/assets/images/android.mp4" />
+      </div>
+    )
+  }
+
+  const Language={
+    Title :  hindi?"आपका रामभूमि अयोध्या में स्वागत है" : "Welcome to Rambhoomi Ayodhya",
+    PlaceHolderName:hindi?"अपना नाम दर्ज करें" : "Enter Your Name",
+    PlaceHolderFlight:hindi?"अपनी उड़ान का नाम ढूंढें" : "Find Your Flight Name",
+    Male:hindi?"पुरुष" : "Male",
+    FeMale:hindi?"महिला" : "Female",
+    ChaloButton:hindi?"चलो अयोध्या" : "let's Go To Ayodhya",
+    Visitor: hindi?"कुल आगंतुक":"Total Visitors"
+  }
 
  
-
   return (
-    <>
+    <div>
+
+
+
+
 
       <div className={inter.className + `bg-hero-bg max-w-8xl bg-[#F0D103] bg-cover bg-no-repeat mx-auto flex flex-row   md:p-0 p-4 justify-center   md:m-0 h-screen lg:h-[100vh] md:w-[100vw] `}>
         <style jsx global>{`
@@ -522,23 +565,79 @@ export default function GlbCombiner() {
 
 
         <img src="/assets/images/TempleImage1.png" className="hidden lg:block absolute bottom-[-30px] h-[60%] z-10 w-full  " alt="" />
-        <img src="/assets/images/templeM2.png" className="lg:hidden  absolute  bottom-[-100px]   z-10  " alt="" />
+        {
+          steps == 0 ?
+            <img src="/assets/images/templeM2.png" className="lg:hidden  absolute  bottom-[-100px]   z-10  " alt="" />
+            : null
+        }
 
 
 
         <img src="/assets/images/Sun.png" className="absolute  bg-cover -z-0 w-screen h-screen" />
 
+        <div className=" z-50  scale-75 w-fit bottom-[-100px] right-[-10px]  lg:left-4 lg:bottom-32 absolute">
 
-        <div className="absolute z-50 bottom-[-80px]  lg:left-16 lg:bottom-24">
-          <div className="inline-block  bg-white  px-3 py-1 rounded-3xl font-semibold text-lg text-[#900000] ">
-            Total Visitors: 1,33,000
+          <div className="z-50 grid grid-flow-row grid-cols-2 gap-x-1" >
+            <div
+              onClick={() => {
+                setHindi(true);
+              }}
+              className={"bg-white z-50 cursor-pointer flex justify-between  gap-x-2 lg:px-5 px-1 border-[1px] border-[#900000] item-center my-4 rounded-full py-2"}
+            >
+              <div className="flex items-center gap-x-2">
+                <img className="scale-90" src="/assets/images/india.svg" alt="" />
+                <span className="text-[#900000] text-[20px] font-[500]  " >हिंदी</span>
+              </div>
+              {
+                hindi ?
+                  <div className="border-[2px] mr-3 translate-y-[10px] w-4 h-4  bg-[#900000] rounded-full border-[#900000] "></div>
+                  :
+                  <div className="border-[2px] mr-3 translate-y-[10px] w-4 h-4  rounded-full border-[#900000]"></div>
+              }
+            </div>
+
+            <div
+              onClick={() => {
+                setHindi(false);
+              }}
+              className={"bg-white z-50 justify-between border-[1px] border-[#900000] cursor-pointer flex  gap-x-2 lg:px-5 px-1 item-center my-4 rounded-full py-2"}
+            >
+              <div className="flex items-center gap-x-2">
+                <img className="scale-90" src="/assets/images/us.svg" alt="" />
+                <span className="text-[#900000] text-[20px] font-[500] " >English</span>
+              </div>
+              {
+                hindi == false ?
+                  <div className="border-[2px] mr-3 translate-y-[10px] w-4 h-4 bg-[#900000]  rounded-full border-[#900000] ">
+                  </div>
+                  :
+                  <div className="border-[2px] mr-3 translate-y-[10px] w-4 h-4  rounded-full border-[#900000]"></div>
+              }
+            </div>
           </div>
+
         </div>
+
+
+
+        {
+          steps == 0 ?
+            <div className="absolute z-40 bottom-[-80px] left-4 lg:left-16 lg:bottom-24">
+              <div className="inline-block  bg-white  px-3 py-1 rounded-3xl font-semibold text-lg text-[#900000] ">
+                {Language.Visitor}: 1,33,000
+              </div>
+            </div> : null
+        }
+
+
+
+
+
 
         {/* {viewModal ? (
         <>   <NamasteModal isVisible={viewModal} onClose={() => setViewModal(false)} /> </>
       ) : ( */}
-        <div className="flex justify-center   z-50 w-full mt-10">
+        <div className="flex justify-center   z-40 w-full mt-10">
           {/* <div className="w-[450px] md:mr-20  hidden md:block  rounded-4xl justify-center items-center">
             <div className=" md:flex hidden  rounded-4xl h-full flex-col justify-center items-center text-center [border-radius:20px] ">
               <Image priority={true} className="flex pb-4 rounded-2xl" src={`/assets/images/banner.webp`} width={3000} height={3000} alt={"welcome"} />
@@ -558,7 +657,9 @@ export default function GlbCombiner() {
                 <div>
                   <div className="flex flex-col w-full   space-y-4  ">
                     <div className="flex items-center justify-center font-bold w-full text-center py-4 text-white ">
-                      <h1 className="lg:text-[26px] text-[24px]  text-[#900000] font-[700] ">आपका रामभूमि अयोध्या में स्वागत है</h1>
+                      <h1 className="lg:text-[26px] text-[24px]  text-[#900000] font-[700] ">
+                       {Language.Title}
+                      </h1>
                     </div>
                     {/* <div className={" pt-5 pl-2"}>{isMale == undefined && <div className="flex  text-white">Please Enter Your Name</div>}</div> */}
 
@@ -571,13 +672,13 @@ export default function GlbCombiner() {
                         <input
                           type="text"
                           name="username"
-                          placeholder={"अपना नाम दर्ज करें"}
+                          placeholder={Language.PlaceHolderName}
                           value={username}
                           onChange={(e) => {
                             setUsername(e.target.value);
                             setWarning("");
                           }}
-                          className={"w-full z-50 flex caret-black flex-col rounded-lg bg-white px-4 py-2 hover:border-none hover:outline-none outline-none border-none  placeholder:text-[#90000080] font-medium tracking-wider text-[#900000] text-lg "}
+                          className={"w-full z-40 flex caret-black flex-col rounded-lg bg-white px-4 py-2 hover:border-none hover:outline-none outline-none border-none  placeholder:text-[#90000080] font-medium tracking-wider text-[#900000] text-lg "}
                         />
                       </div>
                     </div>
@@ -598,12 +699,12 @@ export default function GlbCombiner() {
                           <input
                             type="text"
                             name="username"
-                            placeholder={"अपनी उड़ान का नाम ढूंढें"}
+                            placeholder={Language.PlaceHolderFlight}
                             onChange={(e) => {
                               setflight(e.target.value);
                               setWarning("");
                             }}
-                            className={"w-full z-50 flex caret-black flex-col rounded-lg bg-white px-4 py-2 hover:border-none hover:outline-none outline-none border-none  placeholder:text-[#90000080] font-medium tracking-wider text-[#900000] text-lg "}
+                            className={"w-full z-40 flex caret-black flex-col rounded-lg bg-white px-4 py-2 hover:border-none hover:outline-none outline-none border-none  placeholder:text-[#90000080] font-medium tracking-wider text-[#900000] text-lg "}
                           />
                         </div>
                       </div>
@@ -624,7 +725,7 @@ export default function GlbCombiner() {
                     >
                       <div className="flex items-center gap-x-2">
                         <img className="scale-90" src="/assets/images/man.png" alt="" />
-                        <span className="text-[#900000] text-[20px] font-[500]  " >पुरुष</span>
+                        <span className="text-[#900000] text-[20px] font-[500]  " >{Language.Male}</span>
                       </div>
                       {
                         isMale ?
@@ -643,7 +744,7 @@ export default function GlbCombiner() {
                     >
                       <div className="flex items-center gap-x-2">
                         <img className="scale-90" src="/assets/images/women.png" alt="" />
-                        <span className="text-[#900000] text-[20px] font-[500] " >महिला</span>
+                        <span className="text-[#900000] text-[20px] font-[500] " >{Language.FeMale}</span>
                       </div>
                       {
                         isMale == false ?
@@ -662,7 +763,7 @@ export default function GlbCombiner() {
                   >
                     <button className=" w-full gap-x-3 text-center text-xl py-2 flex justify-center items-center rounded-full z-50 bg-[#900000]  font-bold " >
                       <span>
-                        चलो अयोध्या
+                        {Language.ChaloButton}
                       </span>
                       <svg width="36" height="26" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="2" height="34" rx="1" fill="#F36E16" />
@@ -680,60 +781,63 @@ export default function GlbCombiner() {
                 </div>
               )}
               {steps == 1 && (
-                <div className={"AVATARS flex md:h-full flex-col items-center justify-center space-y-4 pt-4"}>
-                  <div className="flex flex-col shrink-0 gap-1 grow w-full max-w-2xl justify-center items-center ">
-                    <video src="/assets/images/loader.mp4" autoPlay width={300} className="cursor-pointer" />
-                    <div className="flex flex-row  gap-3  overflow-x-hidden ">
-                      {isMale &&
-                        allAvatarModels.map((model, index) => {
-                          return (
+                <div>
+                  <div className={"AVATARS flex md:h-full flex-col items-center justify-center space-y-4 pt-4"}>
 
 
-                            // <div key={index} className="flex shrink-0 flex-col gap-3 py-2 border border-gray-400 rounded-xl">
-                            //   <Image
-                            //     width={100}
-                            //     height={100}
-                            //     unoptimized
-                            //     priority={true}
-                            //     alt="avatar"
-                            //     src={model.link}
-                            //     onClick={() => {
-                            //       //   window.open("https://metaverse-elections.netlify.app?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + "&gender=" + (isMale ? "male" : "female"));
-                            //       // window.open("https://elections.abpverse.com/?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + (isSafari ? "&browser=safari" : ""));
-                            //       window.open("http://moonsdemo.world/")
-                            //     }}
-                            //     className={`flex shrink-0 md:w-28 w-24  md:h-28 h-24 object-cover bg-transparent   md:mt-0 ${avatarUrl == model.name ? " border-4  border-gray-400 rounded-lg cursor-pointer" : "bg-gray-400 cursor-pointer rounded-lg"}`}
-                            //   />
-                            // </div>
-                            <div></div>
-                          );
-                        })}
-                      {isMale == false &&
-                        femaleAvatarModels.map((model, index) => {
-                          return (
-                            // <div key={index} className="flex shrink-0 flex-col gap-3 py-2 border border-gray-400 rounded-xl">
-                            //   <Image
-                            //     width={100}
-                            //     height={100}
-                            //     unoptimized
-                            //     priority={true}
-                            //     alt="avatar"
-                            //     src={model.link}
-                            //     onClick={() => {
-                            //       //   window.open("https://metaverse-elections.netlify.app?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + "&gender=" + (isMale ? "male" : "female"));
-                            //       // window.open("https://elections.abpverse.com/?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + (isSafari ? "&browser=safari" : ""));
-                            //       window.open("http://moonsdemo.world/")
-                            //     }}
-                            //     className={`flex shrink-0 md:w-28 w-24  md:h-28 h-24 object-cover bg-transparent   md:mt-0 ${avatarUrl == model.name ? " border-4  border-gray-400 rounded-lg cursor-pointer" : "bg-gray-400 cursor-pointer rounded-lg"}`}
-                            //   />
-                            // </div>
-                            <div></div>
-                          );
-                        })}
+                    <div className="flex flex-col shrink-0 gap-1 grow w-full max-w-2xl justify-center items-center ">
+                      <div className="flex flex-row  gap-3  overflow-x-hidden ">
+                        {isMale &&
+                          allAvatarModels.map((model, index) => {
+                            return (
+
+
+                              // <div key={index} className="flex shrink-0 flex-col gap-3 py-2 border border-gray-400 rounded-xl">
+                              //   <Image
+                              //     width={100}
+                              //     height={100}
+                              //     unoptimized
+                              //     priority={true}
+                              //     alt="avatar"
+                              //     src={model.link}
+                              //     onClick={() => {
+                              //       //   window.open("https://metaverse-elections.netlify.app?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + "&gender=" + (isMale ? "male" : "female"));
+                              //       // window.open("https://elections.abpverse.com/?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + (isSafari ? "&browser=safari" : ""));
+                              //       window.open("http://moonsdemo.world/")
+                              //     }}
+                              //     className={`flex shrink-0 md:w-28 w-24  md:h-28 h-24 object-cover bg-transparent   md:mt-0 ${avatarUrl == model.name ? " border-4  border-gray-400 rounded-lg cursor-pointer" : "bg-gray-400 cursor-pointer rounded-lg"}`}
+                              //   />
+                              // </div>
+                              <div></div>
+                            );
+                          })}
+                        {isMale == false &&
+                          femaleAvatarModels.map((model, index) => {
+                            return (
+                              // <div key={index} className="flex shrink-0 flex-col gap-3 py-2 border border-gray-400 rounded-xl">
+                              //   <Image
+                              //     width={100}
+                              //     height={100}
+                              //     unoptimized
+                              //     priority={true}
+                              //     alt="avatar"
+                              //     src={model.link}
+                              //     onClick={() => {
+                              //       //   window.open("https://metaverse-elections.netlify.app?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + "&gender=" + (isMale ? "male" : "female"));
+                              //       // window.open("https://elections.abpverse.com/?avatarUrl=" + avatarUrlSplitter(model.name) + "&name=" + username + (isSafari ? "&browser=safari" : ""));
+                              //       window.open("http://moonsdemo.world/")
+                              //     }}
+                              //     className={`flex shrink-0 md:w-28 w-24  md:h-28 h-24 object-cover bg-transparent   md:mt-0 ${avatarUrl == model.name ? " border-4  border-gray-400 rounded-lg cursor-pointer" : "bg-gray-400 cursor-pointer rounded-lg"}`}
+                              //   />
+                              // </div>
+                              <div></div>
+                            );
+                          })}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* <div className="text-white font-bold animate-pulse flex justify-center">{warning}</div> */}
+                    {/* <div className="text-white font-bold animate-pulse flex justify-center">{warning}</div> */}
+                  </div>
                 </div>
               )}
 
@@ -796,6 +900,7 @@ export default function GlbCombiner() {
           </div>
         </div>
         {/* // )} */}
+
       </div>
 
 
@@ -803,6 +908,9 @@ export default function GlbCombiner() {
       {/* {isFrameOpen && <AvatarIframe setRpmFrame={setIsFrameOpen} setReadyPlayerUrl={setAvatarUrl} isMale={isMale} />} */}
 
       {isFrameOpen && <AvatarIframe setRpmFrame={setIsFrameOpen} setReadyPlayerUrl={setAvatarUrl} isMale={isMale} />}
-    </>
+
+
+
+    </div>
   );
 }
