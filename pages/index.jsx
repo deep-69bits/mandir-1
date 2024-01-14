@@ -491,7 +491,7 @@ export default function GlbCombiner() {
       else if (isMale == false) {
         window.location.replace(`https://ayodhya.abpverse.com/?name=${username}&gender=female`);
       }
-    }, 31000);
+    }, 32000);
 
   }
 
